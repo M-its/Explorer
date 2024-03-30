@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+    background: linear-gradient(45deg, #190361, #bb00ff);
+    animation: animateGradient 7s ease infinite;
+    background-size: 200% 200%;
+
+    font-size: 1.6rem;
+
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+@keyframes animateGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body,
+button,
+input {
+    font-family: "DM Sans", sans-serif;
+}
+
+.hide {
+    display: none;
+}
+
+main {
+    background: #fff;
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.8);
+    border-radius: 0.6rem;
+    padding: 4.8rem 6.4rem 6.4rem;
+
+    width: min(42.8rem, 90%);
+
+    margin-top: -6rem;
+
+    text-align: center;
+}
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.4rem;
+    margin-bottom: 1.6rem;
+}
+
+h1,
+p {
+    color: #34355b;
+}
+
+img {
+    margin-top: 1.8rem;
+}
+
+.screen1 img {
+    cursor: pointer;
+}
+
+.screen1 img:hover {
+    -webkit-animation: shake 0.3s linear infinite both;
+    animation: shake 0.3s linear infinite both;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+h2 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #34355b;
+}
+
+p.demotivational-message {
+    background-color: #e4edf1;
+
+    padding: 1rem;
+    box-shadow: 0.3rem 0.1rem 0.5rem rgba(0, 0, 0, 0.4);
+    margin-top: 1.8rem;
+
+    font-size: 2.4rem;
+    font-family: "Neucha", cursive;
+    animation: toFadeIn 0.2s;
+}
+
+@keyframes toFadeIn {
+    0% {
+        transform: translateY(150px) scale(0.1);
+    }
+
+    100% {
+        transform: translateY(0px) scale(1);
+    }
+}
+
+button {
+    background-color: #ff9500;
+
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+
+    margin-top: 1.8rem;
+    margin-bottom: -1.6rem;
+    border: 0;
+    border-radius: 0.4rem;
+    padding: 1.6rem;
+
+    cursor: pointer;
+
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #e28605;
+}

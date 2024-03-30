@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --webkit-font-smoothing: antialiased;
+    --moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --hue: 230;
+    --color-base-white: hsl(0, 0%, 100%);
+    --dark-blue: hsl(195, 90.8%, 25.5%);
+    --light-blue: hsl(195, 45.6%, 40.4%);
+    --main-font: hsl(240, 5.9%, 13.3%);
+
+    font-family: "Mulish", sans-serif;
+}
+
+.app {
+    display: grid;
+    grid-template-rows: max-content 1fr max-content max-content;
+    grid-template-areas: "header" "main" "aside" "footer";
+}
+
+html,
+body,
+input {
+    font-family: "Mulish", sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: var(--color-base-white);
+    color: var(--main-font);
+}
+
+header {
+    grid-area: header;
+    background-color: var(--dark-blue);
+
+    display: flex;
+    gap: 2.6rem;
+    justify-content: center;
+
+    padding: 1.4rem 2.8rem;
+
+    font-weight: 700;
+
+    & .header-container {
+        margin: 0 auto;
+        width: min(122rem, 100%);
+
+        display: flex;
+        align-items: center;
+        gap: 2.4rem;
+
+        & .input-wrapper {
+            flex: 1;
+
+            & label {
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+                position: absolute;
+            }
+
+            & input {
+                width: 100%;
+                padding: 1.2rem 1.4rem;
+
+                background-color: var(--light-blue);
+
+                border: 0;
+                border-radius: 0.4rem;
+
+                font-size: 1.6rem;
+                font-weight: 600;
+                color: var(--color-base-white);
+            }
+
+            &input[placeholder] {
+                color: var(--color-base-white);
+            }
+        }
+
+        & .avatar {
+            width: 4.2rem;
+            height: 4.2rem;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+        }
+    }
+}
+
+main {
+    grid-area: main;
+
+    & img.hero {
+        width: 100%;
+        aspect-ratio: 16/9;
+        min-height: 22rem;
+        object-fit: cover;
+    }
+
+    & .main-container {
+        padding: 3.2rem 2.6rem 0;
+    }
+
+    & h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+    }
+
+    & .likes-wrapper {
+        margin-top: 0.8rem;
+        display: flex;
+        gap: 1.2rem;
+    }
+
+    & .likes-wrapper img {
+        cursor: pointer;
+        transition: filter 0.2s ease;
+    }
+
+    & .likes-wrapper img:hover {
+        filter: brightness(1.2);
+        transition: filter 0.2s ease;
+    }
+
+    & p {
+        margin-top: 3.1rem;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        font-weight: 400;
+    }
+}
+
+aside {
+    grid-area: aside;
+    margin: 3.1rem 2.6rem 0;
+    min-width: 38rem;
+
+    & .posts {
+        margin-top: 3.2rem;
+        display: flex;
+        gap: 3.2rem;
+        flex-direction: column;
+    }
+
+    & .post {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+
+        & img {
+            height: 8.4rem;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 0.5rem;
+        }
+
+        & h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        & p {
+            margin-top: 1.2rem;
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+    }
+}
+
+footer {
+    grid-area: footer;
+    background-color: var(--dark-blue);
+
+    margin-top: 4rem;
+    padding: 2.7rem 1.6rem;
+
+    text-align: center;
+    color: var(--color-base-white);
+}
+
+@media (min-width: 768px) {
+    .app {
+        display: grid;
+        grid-template-columns: auto minmax(min-content, 80rem) 38.4rem auto;
+        grid-template-rows: max-content 1fr max-content;
+        grid-template-areas:
+            "header header header header"
+            ". main aside ."
+            "footer footer footer footer";
+
+        row-gap: 4.4rem;
+        column-gap: 3.4rem;
+        min-height: 100vh;
+        margin: 0 auto;
+    }
+
+    main {
+        & img.hero {
+            border-radius: 0.5rem;
+        }
+        & .main-container {
+            padding: 3.2rem 0;
+
+            & .title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                & .likes-wrapper {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    aside,
+    img.hero {
+        margin: 0;
+    }
+}
