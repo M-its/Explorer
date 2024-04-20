@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    /* Text colors */
+    --ff-primary: "Roboto", sans-serif;
+    --text-color: #fff;
+    --input-text-color: hsl(240, 5.6%, 51.4%);
+    --darkgray-text-color: hsl(189, 4.3%, 32%);
+
+    --hue: 240;
+
+    /* Header colors */
+    --bg-color: hsl(var(--hue), 0%, 0%);
+    --button-bg-color: hsl(195, 90.8%, 25.5%);
+    --input-bg-color: hsl(191, 64.7%, 6.7%);
+
+    /* Table colors*/
+    --thead-bg-color: hsl(194, 72.3%, 12.7%);
+    --tr-dark-color: hsla(194, 63.6%, 6.5%, 0.5);
+    --tr-light-color: hsl(191, 64.7%, 6.7%);
+    --border-color: hsl(191, 30.8%, 42%);
+
+    --button-remove-color: hsl(355, 90.8%, 66.1%);
+
+    --reduce-brightness: brightness(0.8);
+    --increase-brightness: brightness(1.2);
+    --transition-duration: 0.3s;
+}
+
+body {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+body * {
+    font-family: var(--ff-primary);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+#app {
+    padding: 2rem;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 9rem 0;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.search input {
+    height: 4.8rem;
+    width: 46rem;
+
+    background-color: var(--input-bg-color);
+
+    color: var(--text-color);
+
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1.6rem;
+}
+
+.search input::placeholder {
+    color: var(--input-text-color);
+}
+
+.search button {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    height: 4.8rem;
+
+    background-color: var(--button-bg-color);
+
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1.2rem 3.2rem;
+
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--text-color);
+
+    cursor: pointer;
+}
+
+.search button:hover {
+    background-color: var(--text-color);
+    color: var(--button-bg-color);
+    transition: var(--transition-duration);
+}
+
+.search button:hover svg.star {
+    fill: var(--button-bg-color);
+}
+
+svg.star {
+    fill: #fff;
+}
+
+.content {
+    border: 1px solid var(--border-color);
+    border-radius: 1.2rem;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table * {
+    color: var(--text-color);
+}
+
+table th {
+    background-color: #092d38;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    padding: 1.6rem 4rem;
+}
+
+table th:first-child {
+    border-top-left-radius: 1rem;
+}
+
+table th:last-child {
+    border-top-right-radius: 1rem;
+}
+
+table tr {
+    border: 1px solid var(--border-color);
+}
+
+table td {
+    padding: 2.4rem 4rem;
+    text-align: left;
+}
+
+table td.user {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+table tr:nth-child(odd) {
+    background-color: var(--tr-dark-color);
+}
+
+table tr:nth-child(even) {
+    background-color: var(--tr-light-color);
+}
+
+table tr:first-child {
+    border: none;
+}
+
+table tr:last-child {
+    border: none;
+}
+
+td {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+td.user img {
+    width: 5.6rem;
+    height: 5.6rem;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+td.user img {
+    width: 5rem;
+    height: 5rem;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+td.user a {
+    text-decoration: none;
+}
+
+td.user a span:hover,
+td.user a p:hover {
+    filter: var(--reduce-brightness);
+    transition: var(--transition-duration);
+}
+
+td.user a span {
+    font-weight: normal;
+}
+
+td button.remove {
+    background: none;
+    border: none;
+
+    font-size: 2rem;
+    color: var(--button-remove-color);
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+td button.remove:hover {
+    filter: var(--reduce-brightness);
+    transition: var(--transition-duration);
+}
+
+td.empty {
+    height: 50px;
+    text-align: center;
+    padding: 21rem 19rem 29rem;
+}
+
+td.empty img {
+    width: 13.2rem;
+    margin-right: 6rem;
+}
+
+td.empty p {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--darkgray-text-color);
+}
+
+td.empty img,
+td.empty p {
+    display: inline-block;
+    vertical-align: middle;
+}
