@@ -1,7 +1,9 @@
-nav a {
-    color: black;
+body {
+    background-color: #000;
 }
 
 h1 {
-    color: black;
+    margin-top: 6.5rem;
+    margin-left: 10rem;
+    width: 64.8rem;
 }
