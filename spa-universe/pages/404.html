@@ -1,1 +1,32 @@
-<h1>Você chegou na fronteira do espaço! Não há nada alem daqui...</h1>
+Você pode adicionar um script JavaScript ao seu arquivo 404.html para redirecionar para a página index.html. Aqui está um exemplo de como você pode fazer isso:
+
+HTML
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+</head>
+
+<body>
+    <h1>Você chegou na fronteira do espaço! Não há nada alem daqui...</h1>
+
+    <script>
+        // Verifique se a URL corresponde a uma das suas rotas
+        const routes = ['/', '/universe', '/exploration'];
+        const path = window.location.pathname;
+        if (routes.includes(path)) {
+            // Redirecione para o index.html com a rota correta
+            window.location.href = '/index.html' + path;
+        }
+    </script>
+</body>
+
+</html>
+Código gerado por IA. Examine e use com cuidado. Mais informações em perguntas frequentes.
+Este script verifica se o caminho da URL corresponde a uma das suas rotas definidas. Se sim, ele redireciona para o index.html com a rota correta.
+
+Por favor, note que você pode precisar ajustar os caminhos dependendo da estrutura do seu projeto. Espero que isso ajude! Se você tiver mais perguntas, fique à vontade para perguntar! 😊
