@@ -9,6 +9,7 @@ nav :nth-child(2) {
 }
 
 .content-wrapper {
+    margin-left: 0;
     text-align: center;
 }
 

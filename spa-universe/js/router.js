@@ -27,7 +27,7 @@ export class Router {
 
                 app.innerHTML = html
                 page.className = route.styleClass
-                cssLink.href = `pages/${route.styleClass}.css`
+                cssLink.href = `./pages/${route.styleClass}.css`
             })
     }
 }
